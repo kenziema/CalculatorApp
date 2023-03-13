@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private var tvSelectedDate : TextView? = null
     private var tvAgeInMinutes : TextView? = null
     private var tvAgeInHours : TextView? = null
+    private var tvAgeInDays : TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         tvSelectedDate = findViewById(R.id.tvSelectedDate)
         tvAgeInMinutes = findViewById(R.id.tvAgeInMinutes)
         tvAgeInHours = findViewById(R.id.tvAgeInHours)
+        tvAgeInDays = findViewById(R.id.tvAgeInDays)
         btnDatePicker.setOnClickListener{
 
             clickDatePicker()
@@ -58,17 +60,24 @@ class MainActivity : AppCompatActivity() {
 
                     val selectedDateInHours = theDate.time/3600000
 
+                    val selectedDateInDays = theDate.time/86400000
                     val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
                     currentDate?.let {
                         val currentDateInMinutes = currentDate.time/60000
 
                         val currentDateInHours = currentDate.time/3600000
 
+                        val currentDateInDays = currentDate.time/86400000
+
                         val differenceInMinutes = currentDateInMinutes - selectedDateInMinutes
 
                         val differenceInHours = currentDateInHours - selectedDateInHours
+
+                        val differenceInDays = currentDateInDays - selectedDateInDays
+
                         tvAgeInMinutes?.text = differenceInMinutes.toString()
                         tvAgeInHours?.text = differenceInHours.toString()
+                        tvAgeInDays?.text = differenceInDays.toString()
                     }
 
                 }
