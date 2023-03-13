@@ -106,4 +106,25 @@
         android:textStyle="bold"
         />
 
+    <TextView
+        android:id="@+id/tvAgeInDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12sp"
+        android:text="1"
+        android:textColor="@color/fontColor"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12sp"
+        android:text="In Days till date"
+        android:textColor="@color/lightGrey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        />
+
 </LinearLayout>
